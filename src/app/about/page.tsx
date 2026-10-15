@@ -188,7 +188,7 @@ export default function AboutPage() {
 
             <footer className="border-t border-zinc-900 bg-black/80 py-8 md:py-12 text-center text-xs md:text-sm text-zinc-500 backdrop-blur-md">
                 <div className="mb-4 flex flex-wrap justify-center gap-4 md:gap-6 px-4">
-                    <Link href="https://github.com/bilalmughal1" target="_blank" className="hover:text-white transition-colors">GitHub</Link>
+                    <Link href="https://github.com/fahadbilalsaleem" target="_blank" className="hover:text-white transition-colors">GitHub</Link>
                     <Link href="https://fahadbilal.com" target="_blank" className="hover:text-white transition-colors">Portfolio</Link>
                     <Link href="https://linkedin.com/in/fahadbilalsaleem" target="_blank" className="hover:text-white transition-colors">LinkedIn</Link>
                 </div>

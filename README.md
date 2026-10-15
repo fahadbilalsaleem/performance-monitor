@@ -3,7 +3,7 @@
 Track Google PageSpeed Insights (LCP, INP, CLS, Performance, SEO, A11y, Best Practices) for multiple sites. Runs mobile/desktop audits, stores history, charts results, exports CSV, and keeps each user’s data isolated via Supabase Row Level Security.
 
 Live demo: https://performance-monitor-beta.vercel.app  
-Repo: https://github.com/bilalmughal1/performance-monitor
+Repo: https://github.com/fahadbilalsaleem/performance-monitor
 
 ## Feature set
 - Email/password auth with Supabase (signup, login, forgot/reset password) + Google OAuth (requires your credentials and Google test/verification).

@@ -112,7 +112,7 @@ export default function Home() {
         <div className="mb-4 flex flex-wrap justify-center gap-4 md:gap-6 px-4">
           <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
           <Link href="/about" className="hover:text-white transition-colors">About</Link>
-          <Link href="https://github.com/bilalmughal1/performance-monitor" target="_blank" className="hover:text-white transition-colors">GitHub</Link>
+          <Link href="https://github.com/fahadbilalsaleem/performance-monitor" target="_blank" className="hover:text-white transition-colors">GitHub</Link>
         </div>
         <p>&copy; {new Date().getFullYear()} Performance Monitor. All rights reserved.</p>
       </footer>

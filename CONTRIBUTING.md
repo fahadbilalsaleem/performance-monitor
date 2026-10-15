@@ -4,7 +4,7 @@ First off, thank you for considering contributing to this project! Your help is 
 
 ## Where to start?
 
-If you're looking for a place to start, check out the [open issues](https://github.com/bilalmughal1/performance-monitor/issues). You can also contribute by improving the documentation, adding tests, or proposing new features.
+If you're looking for a place to start, check out the [open issues](https://github.com/fahadbilalsaleem/performance-monitor/issues). You can also contribute by improving the documentation, adding tests, or proposing new features.
 
 ## How to contribute?
 

@@ -93,7 +93,7 @@ export default function SignupPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   className="underline"
-                  href="https://github.com/bilalmughal1/performance-monitor"
+                  href="https://github.com/fahadbilalsaleem/performance-monitor"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -199,7 +199,7 @@ export default function SignupPage() {
           </Link>
           <Link
             className="underline"
-            href="https://github.com/bilalmughal1"
+            href="https://github.com/fahadbilalsaleem"
             target="_blank"
             rel="noreferrer"
           >
