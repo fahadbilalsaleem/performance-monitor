@@ -55,11 +55,11 @@ export async function GET(
         const authUrl = getAuthUrl(service, siteId, userId);
 
         return NextResponse.redirect(authUrl);
-    } catch (error: any) {
+    } catch (error) {
         console.error('OAuth connect error:', error);
         return NextResponse.json({
             error: "Failed to initiate OAuth flow",
-            details: error.message
+            details: (error as Error).message
         }, { status: 500 });
     }
 }

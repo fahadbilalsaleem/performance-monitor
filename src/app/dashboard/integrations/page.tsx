@@ -21,11 +21,6 @@ export default function IntegrationsPage() {
   const [selectedSiteId, setSelectedSiteId] = useState<string>("");
   const [error, setError] = useState<string>("");
 
-  useEffect(() => {
-    loadIntegrations();
-    loadSites();
-  }, []);
-
   async function loadIntegrations() {
         const { data: { user } } = await supabase.auth.getUser();
         if (!user) return;
@@ -50,6 +45,13 @@ export default function IntegrationsPage() {
     if ((data || []).length > 0) setSelectedSiteId(data![0].id);
   }
 
+  useEffect(() => {
+    // Both loaders await Supabase before setting state, so nothing here runs synchronously.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    loadIntegrations();
+    loadSites();
+  }, []);
+
     async function handleConnect(service: 'analytics' | 'searchConsole' | 'ads') {
         setConnecting(service);
     setError("");
@@ -68,7 +70,7 @@ export default function IntegrationsPage() {
     }
 
         // Redirect to OAuth flow
-    window.location.href = `/api/integrations/google/${service}/connect?userId=${user.id}&siteId=${selectedSiteId}`;
+    window.location.assign(`/api/integrations/google/${service}/connect?userId=${user.id}&siteId=${selectedSiteId}`);
     }
 
     async function handleDisconnect(service: string) {
@@ -204,7 +206,7 @@ export default function IntegrationsPage() {
                                         <Button
                                             variant="outline"
                                             size="sm"
-                                            onClick={() => handleConnect(service.id as any)}
+                                            onClick={() => handleConnect(service.id as 'analytics' | 'searchConsole' | 'ads')}
                                             disabled={isLoading}
                                             className={`border-${service.color.split('-')[1]}-500/20 w-full sm:w-auto`}
                                         >
@@ -238,9 +240,9 @@ export default function IntegrationsPage() {
                     <CardTitle className="text-lg md:text-xl">How It Works</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm text-zinc-300">
-                    <p>1. Click "Connect" on any service above</p>
-                    <p>2. You'll be redirected to Google to authorize access (read-only)</p>
-                    <p>3. Once connected, we'll automatically sync your data daily</p>
+                    <p>1. Click &ldquo;Connect&rdquo; on any service above</p>
+                    <p>2. You&apos;ll be redirected to Google to authorize access (read-only)</p>
+                    <p>3. Once connected, we&apos;ll automatically sync your data daily</p>
                     <p>4. View correlated metrics in your site dashboards</p>
                 </CardContent>
             </Card>

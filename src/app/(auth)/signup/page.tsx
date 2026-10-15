@@ -49,7 +49,7 @@ export default function SignupPage() {
     }
 
     // If identities is empty, Supabase found an existing user
-    if (data.user && Array.isArray((data.user as any).identities) && (data.user as any).identities.length === 0) {
+    if (data.user?.identities?.length === 0) {
       setError("An account with this email already exists. Please login instead.");
       return;
     }

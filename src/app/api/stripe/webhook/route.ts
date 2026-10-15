@@ -25,11 +25,11 @@ export async function POST(req: Request) {
             signature,
             process.env.STRIPE_WEBHOOK_SECRET!
         );
-    } catch (error: any) {
-        return new NextResponse(`Webhook Error: ${error.message}`, { status: 400 });
+    } catch (error) {
+        return new NextResponse(`Webhook Error: ${(error as Error).message}`, { status: 400 });
     }
 
-    const session = event.data.object as any;
+    const session = event.data.object as { subscription?: string | null; metadata?: { userId?: string } | null };
 
     if (event.type === "checkout.session.completed") {
         const subscription = await stripe.subscriptions.retrieve(session.subscription as string);

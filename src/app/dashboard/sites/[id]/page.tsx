@@ -49,7 +49,7 @@ type RunRow = {
   final_url?: string | null;
   page_title?: string | null;
   lighthouse_version?: string | null;
-  raw?: any;
+  raw?: unknown;
   created_at: string;
 };
 
@@ -134,8 +134,8 @@ export default function SiteHistoryPage() {
       alert(`${strategy.charAt(0).toUpperCase() + strategy.slice(1)} audit completed successfully!`);
       // Reload runs to show the new audit
       await loadSiteAndRuns(userId);
-    } catch (error: any) {
-      alert(`Audit failed: ${error.message}`);
+    } catch (error) {
+      alert(`Audit failed: ${(error as Error).message}`);
     } finally {
       setRunningAudit(false);
     }

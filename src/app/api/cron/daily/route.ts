@@ -78,9 +78,9 @@ export async function GET(req: Request) {
             });
 
             results.push({ site: site.url, status: "ok", performance });
-        } catch (e: any) {
+        } catch (e) {
             console.error(`Failed run for ${site.url}`, e);
-            results.push({ site: site.url, status: "error", msg: e.message });
+            results.push({ site: site.url, status: "error", msg: (e as Error).message });
         }
     }
 

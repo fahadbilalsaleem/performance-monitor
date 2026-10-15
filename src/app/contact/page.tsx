@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <div className="text-sm text-red-400">Please fill out all fields.</div>
               )}
               {status === "sent" && (
-                <div className="text-sm text-emerald-400">Message sent! We'll reply soon.</div>
+                <div className="text-sm text-emerald-400">Message sent! We&apos;ll reply soon.</div>
               )}
 
               <Button type="submit" className="w-full md:w-auto" variant="premium">
